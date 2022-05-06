@@ -1,9 +1,4 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
- */
-var searchInsert = function(nums, target) {
+const searchInsert = (nums, target) => {
     let index = 0
     for(i = 0; i < nums.length; i++){
         if(nums[i] === target){

@@ -1,6 +1,4 @@
-const isAnagram = (s, t) => {
-    s = s.split('').sort().join('')
-    t = t.split('').sort().join('')
-    if(s.includes(t) && t.includes(s)) return true
-    return false
+const isAnagram = function(s, t) {
+    return s.split('').sort().join('') == t.split('').sort().join('')
+   
 }

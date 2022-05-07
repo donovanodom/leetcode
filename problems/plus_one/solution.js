@@ -1,7 +1,7 @@
 const plusOne = (digits) => {
-    let num = digits.join('')
-    num = BigInt(num)
-    num++
-    num = Array.from(num.toString()).map(Number)
-    return num
+    digits = BigInt(digits.join(''))
+    digits++
+    digits = Array.from(String(digits))
+    digits = digits.map((digit) => parseInt(digit))
+    return digits
 }

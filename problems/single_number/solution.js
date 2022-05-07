@@ -1,7 +1,9 @@
 const singleNumber = (nums) => {
     if(nums.length == 1) return nums[0]
-    for(i = 0; i < nums.length; i++){
-        let stack = nums.filter((num) => num == nums[i])
-        if(stack.length == 1) return stack[0]
+    nums = nums.sort(function(a,b){return a - b})
+    let pair = 1
+    for(i = 0; i < nums.length; i += 2){
+        if(nums[i] != nums[pair]) return nums[i]
+        pair += 2
     }
 }

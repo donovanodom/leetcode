@@ -1,13 +1,9 @@
 const fib = (n) => {
-    let sequence = [0,1]
-    if(n < 2){
-        return n
-    }else if(n === 2){
-        return 1
-    }else{
-        for(i = 0; i < n - 1; i++){
-            sequence.push(sequence[sequence.length -1 ] + sequence[sequence.length - 2]) 
-        }
-        return sequence[sequence.length -1 ]
+    let seq = [0,1]
+    if(n < 2) return seq[n]
+    for(i = 1; i < n; i++){
+        let num = seq[i] + seq[i - 1]
+        seq.push(num)
     }
-};
+    return seq[seq.length - 1]
+}

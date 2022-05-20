@@ -1,4 +1,4 @@
 const containsDuplicate = (nums) => {
-    let copy = [... new Set(nums)]
-    return copy.length == nums.length ? false : true
-};
+    let copy = [...new Set(nums)]
+    return nums.length != copy.length
+}

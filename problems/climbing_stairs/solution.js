@@ -1,7 +1,7 @@
 const climbStairs = (n) => {
-    let arr = [0, 1]
+    let seq = [0, 1]
     for(i = 1; i < n + 1; i++){
-        arr.push(arr[i] + arr[i-1])
+        seq.push(seq[i] + seq[i - 1])
     }
-    return arr[arr.length - 1]
+    return seq[seq.length - 1]
 }

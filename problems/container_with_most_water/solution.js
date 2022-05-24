@@ -1,16 +1,15 @@
 const maxArea = (height) => {
-    let maxArea = 0;
-    let i = 0, j = height.length-1;
+    let maxArea = 0, i = 0, j = height.length-1
     while(i<j) {
-        let area = height[i] < height[j] ? height[i] * (j - i) : height[j] * (j - i);
+        let area = height[i] < height[j] ? height[i] * (j - i) : height[j] * (j - i)
         if (area > maxArea) {
-            maxArea = area;
+            maxArea = area
         }
             if (height[i] > height[j]) {
-            j--;
+            j--
         } else {
-            i++;
+            i++
         }
     }
-    return maxArea;
+    return maxArea
 }

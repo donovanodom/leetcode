@@ -33,10 +33,8 @@ const isValidSudoku = (board) => {
         if(grids.length < 9) formGrids()
     }
     formGrids()
-    
     let numsX = board.map((a) => a.filter((x) => x != '.'))
     let numsY = verts.map((b) => b.filter((y) => y != '.'))
-    
     const testValid = (set) => {
         for(i = 0; i < set.length; i++){
             let onlyNums = set[i].filter((n) => n != '.')

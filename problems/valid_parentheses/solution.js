@@ -1,10 +1,5 @@
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isValid = function(s) {
+const isValid = (s) => {
     let stack = []
-    
     for(let i = 0; i < s.length; i++){
         let char = stack[stack.length -1]
         if(s[i] == '(' || s[i] =='{' || s[i] == '['){
@@ -14,4 +9,4 @@ var isValid = function(s) {
         }else return false
     }
     return stack.length ? false : true
-};
+}

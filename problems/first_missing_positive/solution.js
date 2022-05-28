@@ -2,7 +2,6 @@ const firstMissingPositive = (nums) => {
     nums = [...new Set(nums.sort((a,b) => a - b).filter((x) => x > 0))]
     let i = 0
     if(nums[i] != 1) return 1
-    console.log(nums)
     while(i < nums.length){
         if(nums[i] + 1 == nums[i + 1]){
             i++
@@ -12,3 +11,6 @@ const firstMissingPositive = (nums) => {
     }
     return nums[nums.length - 1] + 1
 }
+
+// Time complexity O(n)
+// Space complexity O(n)

@@ -6,7 +6,7 @@ const isSymmetric = (root) => {
             checkLeft(root.left, list)
             checkRight(root.right, list)
         }else{
-            list.push('null')
+            list.push('x')
         }
     }
     const checkRight = (root, list) => {
@@ -15,7 +15,7 @@ const isSymmetric = (root) => {
             checkRight(root.right, list)
             checkLeft(root.left, list)
         }else{
-            list.push('null')
+            list.push('x')
         }
     }
     checkLeft(root.left, left)

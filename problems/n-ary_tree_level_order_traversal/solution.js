@@ -1,6 +1,6 @@
-const levelOrder = (root) => {
+const levelOrder = function(root) {
     if(!root) return []
-    let q = [[root, 0]], map = {}
+    let q = [[root,0]], map = {}
     while(q.length > 0){
         for(const [node, x] of q){
             if(!map[x]) map[x] = []
@@ -14,5 +14,6 @@ const levelOrder = (root) => {
             i++
         }
     }
+    
     return Object.keys(map).map((key) => map[key])
 }

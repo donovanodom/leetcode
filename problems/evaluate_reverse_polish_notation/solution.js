@@ -6,7 +6,7 @@ const evalRPN = (tokens) => {
             stack.push(tokens[i])
         }else{
             let b = stack.pop(), a = stack.pop()
-             switch(tokens[i]){
+            switch(tokens[i]){
                 case '+':
                     stack.push(a + b)
                 break

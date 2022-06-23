@@ -4,7 +4,7 @@ const isValid = (s) => {
         let char = stack[stack.length - 1]
         if(s[i] == '(' || s[i] == '{' || s[i] == '['){
             stack.push(s[i])
-        }else if(s[i] == '}' && char == '{' || s[i] == ')' && char == '(' || s[i] == ']' && char == '['){
+        }else if(s[i] == ')' && char == '(' || s[i] == '}' && char == '{' || s[i] == ']' && char == '['){
             stack.pop()
         }else{
             return false

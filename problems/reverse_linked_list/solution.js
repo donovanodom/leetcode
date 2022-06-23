@@ -1,10 +1,10 @@
 const reverseList = (head) => {
-    let previous = null, current = head, following = head
-    while(following){
-        following = following.next
-        current.next = previous
-        previous = current
-        current = following
+    let p = null, c = head, f = head
+    while(f){
+        f = f.next
+        c.next = p
+        p = c
+        c = f
     }
-    return previous
+    return p
 }

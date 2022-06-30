@@ -1,10 +1,9 @@
 const lengthOfLongestSubstring = (s) => {
-    let substr = []
-    let longest = 0
-    for (i = 0; i < s.length; i++) {
-        substr = substr.slice(substr.indexOf(s[i])+1)
-        substr.push(s[i])
-        longest = Math.max(longest, substr.length)
+    let q = [], longest = 0
+    for(char=0;char<s.length;char++){
+        q = q.slice(q.indexOf(s[char])+1)
+        q.push(s[char])
+        longest = Math.max(longest,q.length)
     }
     return longest
-};
+}

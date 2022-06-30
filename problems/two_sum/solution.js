@@ -1,7 +1,9 @@
 const twoSum = (nums, target) => {
-    for(i = 0; i < nums.length; i++){
-        for(j = i + 1; j < nums.length; j++){
-            if(nums[i] + nums[j] == target) return [i,j]
-        }
+    if(nums.length == 2) return [0,1]
+    let vals = new Map()
+    for(num=0;num < nums.length;num++){
+        let num2 = target - nums[num]
+        if(vals.has(num2)) return [vals.get(num2),num]
+        vals.set(nums[num], num)
     }
 }

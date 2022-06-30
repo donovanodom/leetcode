@@ -1,11 +1,13 @@
 const reverse = (x) => {
-    const isEven = x < 0 ? false : true
-    x = Math.abs(x)
-    x = Array.from(String(x)).reverse()
-    x = x.map((x) => parseInt(x)).join('')
-    if(-2147483648 <= x && x <= 2147483647){
-        return isEven ? x : 0 - x
-    }else{
-        return 0
+    let res = []
+    x = String(x)
+    for(char=x.length-1;char>=0;char--){
+        if(x[char] != '-'){
+            res.push(x[char])
+        }else{
+            res.unshift(x[char])
+        }
     }
-}
+    res = res.join('')
+    return Math.abs(res) < 2147483648 ? res : 0
+};  

@@ -3,7 +3,7 @@
  * @return {string}
  */
 
-var longestCommonPrefix = function(strs) {
+const longestCommonPrefix = (strs) => {
     if(strs.length===0) return '';
     let prefix = strs[0];
     

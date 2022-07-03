@@ -4,10 +4,9 @@ class TrieNode{
         this.end = end
     }
 }
-
 var Trie = function() {
     this.root = new TrieNode()
-}
+};
 
 /** 
  * @param {string} word
@@ -20,7 +19,7 @@ Trie.prototype.insert = function(word) {
         current = current.child[char]
     }
     current.end = true
-}
+};
 
 /** 
  * @param {string} word
@@ -33,7 +32,7 @@ Trie.prototype.search = function(word) {
         current = current.child[char]
     }
     return current.end
-}
+};
 
 /** 
  * @param {string} prefix
@@ -46,7 +45,7 @@ Trie.prototype.startsWith = function(prefix) {
         current = current.child[char]
     }
     return true
-}
+};
 
 /** 
  * Your Trie object will be instantiated and called as such:

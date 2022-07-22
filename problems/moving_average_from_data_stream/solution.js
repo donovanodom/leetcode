@@ -1,20 +1,17 @@
 const MovingAverage = function(size) {
     this.size = size
-    this.tracker = {}
-    this.pointer = 0
+    this.tracker = []
     this.sum = 0
 }
 
 MovingAverage.prototype.next = function(val) {
-    this.sum += val
-    this.tracker[this.pointer] = val
-    if(Object.keys(this.tracker).length > this.size){    
-        this.sum -= this.tracker[this.pointer - this.size] 
-        this.pointer++
-        return  this.sum / this.size 
+    if(this.tracker.length < this.size){
+        this.tracker.push(val)
     }else{
-        this.pointer++
-        return  this.sum / Object.keys(this.tracker).length
-    }  
+        this.sum -= this.tracker.shift()
+        this.tracker.push(val)
+    }
+    this.sum += val
+    return  this.sum / this.tracker.length    
 }
 

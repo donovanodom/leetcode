@@ -8,6 +8,6 @@ const maximumPopulation = function(logs) {
             if(x < d && x >= b) obj[i]++
         }
     }
-    const pops = Object.values(obj)
-    return logs[pops.indexOf(Math.max(...pops))][0]
+    let max = Object.entries(obj).sort((x, y) => y[1] - x[1])[0][0]
+    return logs[max][0]
 }

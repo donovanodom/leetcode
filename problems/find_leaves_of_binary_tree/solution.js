@@ -1,19 +1,20 @@
 const findLeaves = (root) => {
-    const traverse = (node, list) => {
-        if(!node) return null
-        if(!node.left && !node.right) {
-            list.push(node.val)
-            return null
-        }
-        node.left = traverse(node.left, list)
-        node.right = traverse(node.right, list)
-        return node
+    let leaves = []
+    while(root){
+        let list = []
+        root = traverse(root, list)
+        leaves.push(list)
     }
-    let answer = []
-    while(root) {
-        let leaves = []
-        root = traverse(root, leaves)
-        answer.push(leaves)
-    }
-    return answer
+    return leaves
+}
+
+const traverse = (root, list) => {
+    if(!root) return
+    if(!root.left && !root.right){
+        list.push(root.val)
+        return null
+    } 
+    root.left = traverse(root.left, list) 
+    root.right = traverse(root.right, list)
+    return root
 }

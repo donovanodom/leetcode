@@ -1,7 +1,7 @@
 const countSubIslands = function(grid1, grid2) {
     let subIslands = 0, destroyed = new Set()
-    const destroy = (coordinates) => {
-        const dirs = [[1,0],[-1,0],[0,1],[0,-1]]
+    const dirs = [[1,0],[-1,0],[0,1],[0,-1]]
+    const destroy = (coordinates) => {     
         let q = [coordinates], sub = true
         while(q.length){
             const [x,y] = q.shift()
@@ -19,7 +19,7 @@ const countSubIslands = function(grid1, grid2) {
     }
     for(row = 0; row < grid2.length; row++){
         for(col = 0; col < grid2[0].length; col++){
-            if(grid2[row][col] && !destroyed.has(`${col},${row}`)) subIslands += destroy([col,row])
+            if(grid2[row][col]) subIslands += destroy([col,row])
         }
     }
     return subIslands

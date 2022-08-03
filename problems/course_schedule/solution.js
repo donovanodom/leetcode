@@ -1,23 +1,21 @@
-// Kahn's algo
 const canFinish = function(numCourses, prerequisites) {
-    const inDeg = new Array(numCourses).fill(0)
+    const inDeg = Array(numCourses).fill(0)
     for(const pre of prerequisites){
         inDeg[pre[0]]++
     }
-    let zeroDeg = []
+    const zerDeg = []
     for(i = 0; i < numCourses; i++){
         if(inDeg[i] == 0){
-            zeroDeg.push(i)
+            zerDeg.push(i)
         }
     }
-    if(!zeroDeg.length) return false
-    while(zeroDeg.length){
-        let course = zeroDeg.pop()
+    while(zerDeg.length){
+        let course = zerDeg.pop()
         for(const pre of prerequisites){
             if(course == pre[1]){
                 inDeg[pre[0]]--
                 if(inDeg[pre[0]] == 0){
-                    zeroDeg.push(pre[0])
+                    zerDeg.push(pre[0])
                 }
             }
         }

@@ -8,7 +8,7 @@ const levelOrder = (root) => {
         }
         const len = q.length
         let i = 0
-        while(i<len){
+        while(i < len){
             let [node,x] = q.shift()
             node.children.map((child) => q.push([child,x+1]))
             i++

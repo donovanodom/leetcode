@@ -7,13 +7,14 @@ const validPath = function(n, edges, source, destination) {
         if(!adjList[y]) adjList[y] = []
         adjList[y].push(x)        
     })
+
     const dfs = (node) => {
         visited.add(node)
         adjList[node] && adjList[node].forEach((next) => {
             if(!visited.has(next)) dfs(next)
-        })      
+        })
+        
     }
     dfs(source)
     return visited.has(destination)
 }
-

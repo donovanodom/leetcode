@@ -1,8 +1,8 @@
 const sortArray = (nums) => {
     if(nums.length < 2) return nums
-    let mid = Math.floor(nums.length / 2)
+    let mid = Math.floor(nums.length/2)
     let left = nums.slice(0,mid), right = nums.slice(mid)
-    return merge(sortArray(left),sortArray(right))
+    return merge(sortArray(left), sortArray(right))
 }
 
 const merge = (left, right) => {

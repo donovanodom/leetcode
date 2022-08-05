@@ -8,7 +8,7 @@ const findCheapestPrice = function(n, flights, src, dst, k) {
     while(q.length){
         let [flight,currentPrice,stops] = q.shift()
         const destinations = adjList.get(flight)
-        if(!destinations || stops > k) continue
+        if(!destinations || stops > k || currentPrice > min) continue
         for(const [destination, price] of destinations){       
             if(destination == dst) min = Math.min(min,(currentPrice + price))
             if(!visited.has(`${destination}:${stops}:${currentPrice + price}`)){
@@ -23,6 +23,3 @@ const findCheapestPrice = function(n, flights, src, dst, k) {
     }
     return min == Infinity ? -1 : min
 }
-
-// Time Complexity O(V + E)
-// Space Complexity O(V + E)

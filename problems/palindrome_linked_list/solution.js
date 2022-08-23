@@ -1,8 +1,9 @@
 const isPalindrome = (head) => {
-    let arr = []
+    let og = '', rv = ''
     while(head){
-        arr.push(head.val)
+        og += head.val
+        rv = head.val + rv
         head = head.next
     }
-    return arr.join('') == arr.slice().reverse().join('')    
+    return og == rv
 }

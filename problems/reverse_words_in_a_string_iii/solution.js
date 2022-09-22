@@ -1,5 +1,3 @@
 const reverseWords = (s) => {
-    s = s.split(' ')
-    s = s.map((x) => x.split('').reverse().join(''))
-    return s.join(' ')
+    return s.split(' ').map((x) => x.split('').reverse().join('')).join(' ')
 }
